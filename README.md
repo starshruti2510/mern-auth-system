@@ -42,4 +42,4 @@ npm start
 
 ## 👩‍💻 Author
 
-Shruti
+Shruti Sharma
