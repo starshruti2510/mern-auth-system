@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This project is a MERN Stack Authentication System developed as part of the Prodigy InfoTech Full Stack Development Internship.
+This project is on MERN Stack Authentication System.
 
 ## ✨ Features
 
