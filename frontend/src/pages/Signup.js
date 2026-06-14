@@ -19,6 +19,8 @@ function Signup() {
         setSignupInfo(copySignupInfo);
     }
 
+    const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+
     const handleSignup = async (e) => {
         e.preventDefault();
         const {name, email, password} = signupInfo;
@@ -26,7 +28,7 @@ function Signup() {
             return handleError('name, email and passwords are required')
         }
         try {
-            const url = "https://mern-auth-system-api-peach.vercel.app/auth/signup";
+            const url = `${API_BASE_URL}/auth/signup`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
