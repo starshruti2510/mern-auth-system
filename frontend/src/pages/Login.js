@@ -26,7 +26,7 @@ function Login() {
             return handleError('email and passwords are required')
         }
         try {
-            const url = "http://localhost:8080/auth/login";
+            const url = "https://mern-auth-system-api-peach.vercel.app/auth/login";
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
