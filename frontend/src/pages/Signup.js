@@ -29,6 +29,8 @@ function Signup() {
         }
         try {
             const url = `${API_BASE_URL}/auth/signup`;
+            console.log('Signup request URL:', url);
+            console.log('API_BASE_URL:', API_BASE_URL);
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
