@@ -1,9 +1,36 @@
 const bcrypt = require('bcrypt');
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
 const jwt = require('jsonwebtoken');
 const UserModel = require('../Models/User');
 const { isConnected } = require('../Models/db');
 
-const fallbackUsers = new Map();
+const fallbackUsersFile = path.join(os.tmpdir(), 'mern-auth-users.json');
+
+const loadFallbackUsers = () => {
+    try {
+        if (!fs.existsSync(fallbackUsersFile)) {
+            return new Map();
+        }
+        const raw = fs.readFileSync(fallbackUsersFile, 'utf8');
+        const parsed = JSON.parse(raw);
+        return new Map(Object.entries(parsed || {}));
+    } catch (err) {
+        console.warn('Unable to load fallback users:', err.message);
+        return new Map();
+    }
+};
+
+const saveFallbackUsers = (users) => {
+    try {
+        fs.writeFileSync(fallbackUsersFile, JSON.stringify(Object.fromEntries(users), null, 2));
+    } catch (err) {
+        console.warn('Unable to save fallback users:', err.message);
+    }
+};
+
+let fallbackUsers = loadFallbackUsers();
 
 const getUserByEmail = async (email) => {
     if (isConnected()) {
@@ -32,6 +59,7 @@ const createUser = async (userData) => {
     };
 
     fallbackUsers.set(normalizedEmail, createdUser);
+    saveFallbackUsers(fallbackUsers);
     return createdUser;
 };
 
