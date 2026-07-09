@@ -1,10 +1,10 @@
 # MERN Secure User Authentication System
 
-## 📌 Project Overview
+## Project Overview
 
 This project is on MERN Stack Authentication System.
 
-## ✨ Features
+## Features
 
 * User Signup
 * User Login
@@ -13,7 +13,7 @@ This project is on MERN Stack Authentication System.
 * Password Validation
 * Frontend and Backend Integration
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * React.js
 * Node.js
@@ -22,7 +22,7 @@ This project is on MERN Stack Authentication System.
 * JWT
 * bcrypt
 
-## 🚀 How to Run the Project
+## How to Run the Project
 
 ### Backend
 
@@ -44,6 +44,6 @@ npm start
 
 https://prodigy-fs-01-ui.vercel.app
 
-## 👩‍💻 Author
+## Author
 
 Shruti Sharma
