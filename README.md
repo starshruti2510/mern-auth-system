@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is on MERN Stack Authentication System.
+This is a full-stack authentication system built using the MERN stack. It includes secure user registration and login, JWT-based authentication, password hashing with bcrypt, and protected routes.
 
 ## Features
 
