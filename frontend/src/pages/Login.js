@@ -19,7 +19,7 @@ function Login() {
         setLoginInfo(copyLoginInfo);
     }
 
-    const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:8080').replace(/\/+$/, '');
+    const API_BASE_URL = (process.env.REACT_APP_API_URL || 'https://mern-auth-system-api-rho.vercel.app').replace(/\/+$/, '');
 
     const handleLogin = async (e) => {
         e.preventDefault();

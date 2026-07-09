@@ -7,7 +7,7 @@ function Home() {
   const [loggedInUser, setLoggedInUser] = useState('');
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
-  const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:8080').replace(/\/+$/, '');
+  const API_BASE_URL = (process.env.REACT_APP_API_URL || 'https://mern-auth-system-api-rho.vercel.app').replace(/\/+$/, '');
 
   useEffect(() => {
     setLoggedInUser(localStorage.getItem('loggedInUser'))
